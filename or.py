@@ -9,16 +9,16 @@ def main(data, modelName, plotName, eta, epochs):
 
 
     # Create a Perceptron model for the OR gate with the specified learning rate and epochs.
-    model_or = perceptron(eta=eta, epochs=epochs)
+    model = perceptron(eta=eta, epochs=epochs)
 
     # Fit (train) the model with the input features (X) and target labels (y) using the defined learning rate and epochs.
-    model_or.fit(X,y)
+    model.fit(X,y)
 
     # Calculate and display the total loss for the trained model.
-    _ = model_or.total_loss()
+    _ = model.total_loss()
 
-    model_or.save(filename=modelName,model_dir="model")
-    save_plot(df_OR, model_or, filename=plotName )
+    model.save(filename=modelName,model_dir="model")
+    save_plot(df_OR, model, filename=plotName )
 
 if __name__ == "__main__":
     OR = {
